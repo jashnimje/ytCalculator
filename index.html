@@ -23,87 +23,104 @@
   </head>
 
   <body>
-    <h1>YouTube Money Calculator</h1>
-
-    <div class="slidecontainer">
-      <input
-        type="range"
-        min="1"
-        max="150000"
-        value="20000"
-        class="slider1"
-        onchange="youtubeCalcSlider()"
-        id="myRange1"
-      />
-      <input
-        type="range"
-        min="1"
-        max="100"
-        value="50"
-        class="slider2"
-        onchange="youtubeCalcSlider()"
-        id="myRange2"
-      />
-    </div>
-
-    <div id="calcBlock" class="calcBlock">
-      <div class="width50 dailyVideo">
-        <div class="title">Daily Video Views</div>
-        <div class="subtitle">
-          Drag the slider to calculate potential earnings
+    <div id="calcBlock" class="calcBlock text-center container py-4">
+      <div class="mainGrid align-items-md-stretch">
+        <div class="leftSection">
+          <div class="leftGrid h-100 p-2 text-white bg-dark rounded-3">
+            <div class="col-child">
+              <div class="title">Daily Video Views</div>
+              <div class="subtitle">
+                Drag the slider to calculate potential earnings
+              </div>
+              <div class="viewsDay">
+                <span id="monthRes">20,000</span> Views/Day
+              </div>
+              <input
+                type="range"
+                min="1"
+                max="150000"
+                value="20000"
+                class="slider1"
+                onchange="youtubeCalcSlider()"
+                id="myRange1"
+              />
+              <form>
+                <input
+                  type="hidden"
+                  name="monthRange"
+                  id="monthRange"
+                  onchange="youtubeCalcSlider()"
+                  value="20000"
+                />
+              </form>
+            </div>
+            <div class="col-child">
+              <div class="averageForm">Average Engagement Rate</div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                class="slider2"
+                onchange="youtubeCalcSlider()"
+                id="myRange2"
+              />
+              <form>
+                <input
+                  type="hidden"
+                  name="view"
+                  id="view"
+                  onchange="youtubeCalcSlider()"
+                  value="50"
+                />
+              </form>
+              <div class="inner-grid-columns">
+                <div class="width50">
+                  <div id="resPerMonth">600,000</div>
+                  <div class="titleResMonth">Views per Month</div>
+                </div>
+                <div class="width50">
+                  <div id="resPerYear">7,300,000</div>
+                  <div class="titleResMonth">Views per Year</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="viewsDay"><span id="monthRes">20,000</span> Views/Day</div>
-        <form>
-          <input
-            name="monthRange"
-            id="monthRange"
-            onchange="youtubeCalcSlider()"
-            value="20000"
-          />
-        </form>
-        <div class="averageForm">Average Engagement Rate</div>
-        <form>
-          <input
-            name="view"
-            id="view"
-            onchange="youtubeCalcSlider()"
-            value="50"
-          />
-        </form>
-        <div class="width50">
-          <div id="resPerMonth">600,000</div>
-          <div class="titleResMonth">Views per Month</div>
-        </div>
-        <div class="width50">
-          <div id="resPerYear">7,300,000</div>
-          <div class="titleResMonth">Views per Year</div>
+        <div class="rightSection">
+          <div class="rightGrid h-100 p-2 bg-light border rounded-3">
+            <div class="row-child">
+              <div class="daily">
+                <div class="title">Estimated Daily Earnings</div>
+                <div class="cost">
+                  <span id="minDaily">$28.50</span> -
+                  <span id="maxDaily">$47.50</span>
+                </div>
+              </div>
+            </div>
+            <div class="row-child">
+              <div class="monthly">
+                <div class="title">Estimated Monthly Earnings</div>
+                <div class="cost">
+                  <span id="minMonthly">$855</span> -
+                  <span id="maxMonthly">$1,425</span>
+                </div>
+              </div>
+            </div>
+            <div class="row-child">
+              <div class="yearly">
+                <div class="title">Projected Yearly Earnings</div>
+                <div class="cost">
+                  <span id="minYarly">$10,403</span> -
+                  <span id="maxYarly">$17,338</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="width50 pinkBlock">
-        <div class="border daily">
-          <div class="title">Estimated Daily Earnings</div>
-          <div class="cost">
-            <span id="minDaily">$28.50</span> -
-            <span id="maxDaily">$47.50</span>
-          </div>
-        </div>
-        <div class="border monthly">
-          <div class="title">Estimated Monthly Earnings</div>
-          <div class="cost">
-            <span id="minMonthly">$855</span> -
-            <span id="maxMonthly">$1,425</span>
-          </div>
-        </div>
-        <div class="yearly">
-          <div class="title">Projected Yearly Earnings</div>
-          <div class="cost">
-            <span id="minYarly">$10,403</span> -
-            <span id="maxYarly">$17,338</span>
-          </div>
-        </div>
-      </div>
     </div>
+    <script src="script.js"></script>
+    <script src="calculate.js"></script>
   </body>
-  <script src="script.js"></script>
-  <script src="calculate.js"></script>
 </html>

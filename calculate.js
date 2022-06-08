@@ -53,16 +53,6 @@ function youtubeCalcSlider() {
 																													99 <= n && n <= 100 && (a = 5.4 + n / 1e3);
 
 
-	/*
-		else 21 <= n && n <= 40 ? a = .45 + n / 1e3 : 
-			 41 <= n && n <= 50 ? a = 1.85 + n / 1e3 : 
-			 51 <= n && n <= 60 ? a = 2.35 + n / 1e3 : 
-			 61 <= n && n <= 70 ? a = 3.15 + n / 1e3 : 
-			 71 <= n && n <= 80 ? a = 3.85 + n / 1e3 : 
-			 81 <= n && n <= 90 ? a = 4.5 + n / 1e3 : 
-			 91 <= n && n <= 100 && (a = 5.5 + n / 1e3);
-	*/
-
 	ValPercent = .25 * a,
 		minValDaily = calc.className.includes('twitch_slider') ? ((a - ValPercent) * check / 1e3) * .7 : (a - ValPercent) * check / 1e3,
 		maxValDaily = calc.className.includes('twitch_slider') ? ((a + ValPercent) * check / 1e3) * .7 : (a + ValPercent) * check / 1e3,
@@ -81,33 +71,3 @@ function youtubeCalcSlider() {
 function numberWithCommas(e) {
 	return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
-
-// jQuery(document).ready(function() {
-//     jQuery("#monthRange1").ionRangeSlider({
-//         type: "single",
-//         grid: !0,
-//         from: 2e4,
-//         min: 0,
-//         max: 15e4,
-//         grid: !0,
-//         grid_num: 5,
-//         onChange: function(e) {
-//             jQuery("#monthRange").val(e.from), jQuery(".noxinf").fadeIn(), youtubeCalcSlider()
-//         }
-//     }), jQuery("#view1").ionRangeSlider({
-//         type: "single",
-//         grid: !0,
-//         from: 50,
-//         min: 0,
-//         max: 100,
-//         postfix: " %",
-//         grid: !0,
-//         grid_num: 4,
-//         onChange: function(e) {
-//             jQuery("#view").val(e.from), jQuery(".noxinf").fadeIn(), youtubeCalcSlider()
-//         },
-//         onFinish: function(e) {
-//             ga("send", "event", "Tool Interaction", "youtube calculator")
-//         }
-//     })
-// });
