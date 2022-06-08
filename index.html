@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Money Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <h1>YouTube Money Calculator</h1>
+
+    <div class="slidecontainer">
+      <input
+        type="range"
+        min="1"
+        max="150000"
+        value="20000"
+        class="slider1"
+        onchange="youtubeCalcSlider()"
+        id="myRange1"
+      />
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider2"
+        onchange="youtubeCalcSlider()"
+        id="myRange2"
+      />
+    </div>
+
+    <div id="calcBlock" class="calcBlock">
+      <div class="width50 dailyVideo">
+        <div class="title">Daily Video Views</div>
+        <div class="subtitle">
+          Drag the slider to calculate potential earnings
+        </div>
+        <div class="viewsDay"><span id="monthRes">20,000</span> Views/Day</div>
+        <form>
+          <input
+            name="monthRange"
+            id="monthRange"
+            onchange="youtubeCalcSlider()"
+            value="20000"
+          />
+        </form>
+        <div class="averageForm">Average Engagement Rate</div>
+        <form>
+          <input
+            name="view"
+            id="view"
+            onchange="youtubeCalcSlider()"
+            value="50"
+          />
+        </form>
+        <div class="width50">
+          <div id="resPerMonth">600,000</div>
+          <div class="titleResMonth">Views per Month</div>
+        </div>
+        <div class="width50">
+          <div id="resPerYear">7,300,000</div>
+          <div class="titleResMonth">Views per Year</div>
+        </div>
+      </div>
+      <div class="width50 pinkBlock">
+        <div class="border daily">
+          <div class="title">Estimated Daily Earnings</div>
+          <div class="cost">
+            <span id="minDaily">$28.50</span> -
+            <span id="maxDaily">$47.50</span>
+          </div>
+        </div>
+        <div class="border monthly">
+          <div class="title">Estimated Monthly Earnings</div>
+          <div class="cost">
+            <span id="minMonthly">$855</span> -
+            <span id="maxMonthly">$1,425</span>
+          </div>
+        </div>
+        <div class="yearly">
+          <div class="title">Projected Yearly Earnings</div>
+          <div class="cost">
+            <span id="minYarly">$10,403</span> -
+            <span id="maxYarly">$17,338</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="calculate.js"></script>
+</html>
